@@ -5,7 +5,7 @@ import Hero from "../src/components/Hero";
 import Button from "../src/components/Button";
 import SectionTitle from "../src/components/SectionTitle";
 import { useCheckedIds } from "../src/utilities/checklistsContext";
-import { IconArrowRight } from "../src/icons/arrowRight";
+import IconArrowRight from "../src/icons/arrowRight";
 import data from "../src/data";
 import s from "../pages/metrics/metrics.module.css";
 
