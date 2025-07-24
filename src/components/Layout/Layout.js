@@ -4,7 +4,7 @@ import styles from "./Layout.module.css";
 import Header from "../Header";
 import Footer from "../Footer";
 
-const Layout = ({ children, t }) => {
+const Layout = ({ children }) => {
   const router = useRouter();
   const [isTransitioning, setIsTransitioning] = useState(false);
 

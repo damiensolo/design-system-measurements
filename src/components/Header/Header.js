@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import ThemeToggle from "../ThemeToggle";
 import s from "./Header.module.css";
 
-const Header = ({ t }) => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
 
@@ -52,12 +52,12 @@ const Header = ({ t }) => {
             </li>
             <li className={s.item}>
               <Link href="/about" onClick={closeMenu}>
-                {t?.core?.about || "About"}
+                About
               </Link>
             </li>
             <li className={s.item}>
               <Link href="/share" onClick={closeMenu}>
-                {t?.core?.share || "Share"}
+                Share
               </Link>
             </li>
           </ul>

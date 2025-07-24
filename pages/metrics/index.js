@@ -9,11 +9,11 @@ import data from "../../src/data";
 import s from "./metrics.module.css";
 import IconArrowRight from "../../src/icons/arrowRight";
 
-const MetricsRoute = ({ t }) => {
+const MetricsRoute = () => {
   const { checkedIds } = useCheckedIds();
 
   return (
-    <Layout t={t}>
+    <Layout>
       <div className={s.container}>
         <Hero 
           title="Design System Metrics"
@@ -56,10 +56,8 @@ const MetricsRoute = ({ t }) => {
 };
 
 export async function getStaticProps() {
-  const t = (await import('../../src/translations/en/index')).default;
-
   return {
-    props: { t },
+    props: {},
   };
 }
 

@@ -4,17 +4,17 @@ import Section from "../../src/components/Section";
 import CategoryNav from "../../src/components/CategoryNav";
 import data from "../../src/data";
 
-const MetricsCategoryRoute = ({ t, sectionData }) => {
+const MetricsCategoryRoute = ({ sectionData }) => {
   if (!sectionData) {
     return (
-      <Layout t={t}>
+      <Layout>
         <div>Section not found</div>
       </Layout>
     );
   }
 
   return (
-    <Layout t={t}>
+    <Layout>
       <CategoryNav 
         categories={data.metrics.sections.map(section => ({
           id: section.id,
@@ -23,7 +23,7 @@ const MetricsCategoryRoute = ({ t, sectionData }) => {
         }))}
         activeId={sectionData.id}
       />
-      <Section section={sectionData} completedLabel={t.core.completed} />
+      <Section section={sectionData} completedLabel="Completed" />
     </Layout>
   );
 };
@@ -42,14 +42,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const t = (await import('../../src/translations/en/index')).default;
   const data = (await import('../../src/data')).default;
 
   const sectionData = data.metrics.sections.find(section => section.id === params.id);
 
   return {
     props: { 
-      t,
       sectionData: sectionData || null
     },
   };

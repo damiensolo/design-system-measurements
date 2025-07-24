@@ -22,22 +22,14 @@ const AboutText = () => {
   );
 };
 
-const AboutRoute = ({ t }) => {
+const AboutRoute = () => {
   return (
-    <Layout t={t}>
+    <Layout>
       <div className={s.container}>
         <Hero title="About" subtitle={<AboutText />} />
       </div>
     </Layout>
   );
 };
-
-export async function getStaticProps() {
-  const t = (await import('../../src/translations/en/index')).default;
-
-  return {
-    props: { t },
-  };
-}
 
 export default AboutRoute;

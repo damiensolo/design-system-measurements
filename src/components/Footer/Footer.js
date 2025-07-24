@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useTheme } from "../../utilities/themeContext";
 import s from "./Footer.module.css";
@@ -6,15 +5,11 @@ import s from "./Footer.module.css";
 const Footer = ({ t }) => {
   const { isDarkMode } = useTheme();
 
-  // Provide fallback values if t or t.core is undefined
-  const footerTitle = t?.core?.footerTitle || "";
-  const footerText = t?.core?.footerText || "";
-
   return (
     <div className={s.root}>
       <div className={s.content}>
-        <h2 className={s.title}>{footerTitle}</h2>
-        <p className={s.text}>{footerText}</p>
+        <h2 className={s.title}>Design System Checklist</h2>
+        <p className={s.text}>An open-source checklist to help you plan, build and grow your design system.</p>
       </div>
     </div>
   );

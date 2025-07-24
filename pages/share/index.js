@@ -4,27 +4,19 @@ import ExportButton from "../../src/components/ExportButton";
 import Layout from "../../src/components/Layout";
 import s from "./share.module.css";
 
-const ShareRoute = ({ t }) => {
+const ShareRoute = () => {
   return (
-    <Layout t={t}>
+    <Layout>
       <div className={s.container}>
-        <Hero title={t.core.exportTitle} subtitle={t.core.exportSubtitle}>
+        <Hero title="Spread the word" subtitle="Design systems are best built together. This is why it's possible to share this checklist including the items you've already checked. Share your progress with your team so you can all keep track together.">
           <ExportButton
-            text={t.core.exportAction}
-            feedbackText={t.core.exportComplete}
+            text="Share your progress"
+            feedbackText="Link copied"
           />
         </Hero>
       </div>
     </Layout>
   );
 };
-
-export async function getStaticProps() {
-  const t = (await import('../../src/translations/en/index')).default;
-
-  return {
-    props: { t },
-  };
-}
 
 export default ShareRoute;
