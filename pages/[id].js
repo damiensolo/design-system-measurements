@@ -4,7 +4,7 @@ import Section from "../src/components/Section";
 import CategoryNav from "../src/components/CategoryNav";
 import Link from "next/link";
 import data from "../src/data";
-import s from "./metrics.module.css";
+import s from "./metrics/metrics.module.css";
 
 const SectionRoute = ({ sectionData }) => {
   if (!sectionData) {
