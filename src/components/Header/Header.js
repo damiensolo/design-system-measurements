@@ -26,7 +26,7 @@ const Header = () => {
     <header className={s.container}>
       <div className={s.logo}>
         <Link href="/metrics">
-          <img src="/sd-logo.svg" alt="SD Logo" width="24" height="24" />
+          <img src="/sd-logo.svg" alt="SD Logo" width="32" height="32" className={s.logoImage} />
           <span className={s.logoText}>Design System Checklist</span>
         </Link>
       </div>
