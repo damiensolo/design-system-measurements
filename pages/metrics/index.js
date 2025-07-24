@@ -38,7 +38,7 @@ const MetricsRoute = () => {
                       title={sectionData.title}
                       total={total}
                       completed={completed}
-                      completedLabel={t.core.completed}
+                      completedLabel="Completed"
                     />
                     <p className={s.sectionDescription}>{sectionData.description}</p>
                     <span className={s.arrowRight}>
