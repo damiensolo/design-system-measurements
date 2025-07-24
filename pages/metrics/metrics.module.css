@@ -2,12 +2,6 @@
   max-width: var(--page-width);
   margin: 0 auto;
   padding: var(--spacing-48);
-}
-
-.pageContainer {
-  max-width: var(--page-width);
-  margin: 0 auto;
-  padding: var(--spacing-48);
   margin-bottom: calc(var(--spacing-64) * 3);
 }
 
@@ -129,10 +123,6 @@
 
 @media (max-width: 640px) {
   .container {
-    padding: var(--spacing-32);
-  }
-
-  .pageContainer {
     padding: var(--spacing-32);
     margin-bottom: calc(var(--spacing-32) * 2);
   }

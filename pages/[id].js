@@ -21,7 +21,7 @@ const SectionRoute = ({ sectionData }) => {
 
   return (
     <Layout>
-      <div className={s.pageContainer}>
+      <div className={s.container}>
         <CategoryNav 
           categories={data.metrics.sections.map(section => ({
             id: section.id,
