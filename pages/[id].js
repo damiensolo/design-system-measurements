@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "../src/components/Layout";
 import Section from "../src/components/Section";
@@ -22,7 +21,7 @@ const SectionRoute = ({ sectionData }) => {
 
   return (
     <Layout>
-      <div className={s.container}>
+      <div className={s.pageContainer}>
         <CategoryNav 
           categories={data.metrics.sections.map(section => ({
             id: section.id,
@@ -32,7 +31,7 @@ const SectionRoute = ({ sectionData }) => {
           activeId={sectionData.id}
         />
         <Section section={sectionData} completedLabel="Completed" />
-        
+
         <div className={s.navigation}>
           {previousSection && (
             <Link href={`/${previousSection.id}`} className={s.navLink}>
