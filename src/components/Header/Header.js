@@ -1,50 +1,39 @@
-
-import React, { useState, useCallback, useEffect } from "react";
-import { useRouter } from "next/router";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import classnames from "classnames";
+import { useRouter } from "next/router";
 import ThemeToggle from "../ThemeToggle";
 import s from "./Header.module.css";
 
 const Header = ({ t }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
-  const [isMounted, setIsMounted] = useState(false);
-  const [active, setActive] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    const handleRouteChange = () => setIsMenuOpen(false);
+    router.events.on("routeChangeStart", handleRouteChange);
+    return () => router.events.off("routeChangeStart", handleRouteChange);
+  }, [router]);
 
-  const rightSectionClassName = classnames(s.rightSection, active && s["active"]);
-  const burgerClassName = classnames(s.burger, active && s["active"]);
-
-  const toggleMenu = useCallback((flag) => {
-    setActive((prev) => {
-      const nextActive = flag === undefined ? !prev : flag;
-      if (typeof document !== 'undefined') {
-        document.body.style.overflow = nextActive ? "hidden" : "auto";
-      }
-      return nextActive;
-    });
-  }, []);
-
-  const closeMenu = useCallback(() => toggleMenu(false), [toggleMenu]);
-
-  const navigate = (e, to) => {
-    e.preventDefault();
-    closeMenu();
-    router.push(to);
-  };
+  const rightSectionClassName = `${s.rightSection} ${
+    isMenuOpen ? s.menuOpen : ""
+  }`;
+  const burgerClassName = `${s.burger} ${isMenuOpen ? s.active : ""}`;
 
   return (
     <header className={s.container}>
       <div className={s.logo}>
-        <Link href="/" onClick={closeMenu}>
-          <img 
-            src="/sd-logo.svg" 
-            alt="SD Logo" 
-            className={s.logoImage}
-          />
+        <Link href="/metrics">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M12 2L2 7V17L12 22L22 17V7L12 2Z"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinejoin="round"
+            />
+          </svg>
           <span className={s.logoText}>Design System Checklist</span>
         </Link>
       </div>
@@ -52,15 +41,6 @@ const Header = ({ t }) => {
       <div className={rightSectionClassName}>
         <nav className={s.nav}>
           <ul className={s.menu}>
-            <li className={s.item}>
-              <Link 
-                href="/" 
-                className={router.pathname === "/" ? s.active : ""}
-                onClick={closeMenu}
-              >
-                Build
-              </Link>
-            </li>
             <li className={s.item}>
               <Link 
                 href="/metrics" 

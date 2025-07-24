@@ -1,8 +1,8 @@
 export default {
-  heroTitle: "Build better design systems",
+  heroTitle: "Measure design system success",
   heroSubtitle:
-    "A checklist to help you plan, build and grow your design system.",
-  heroAction: "Get started",
+    "A comprehensive metrics framework to help you measure the impact and effectiveness of your design system.",
+  heroAction: "Start measuring",
 
   about: "About",
   share: "Share",
