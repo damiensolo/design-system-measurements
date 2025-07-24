@@ -2,7 +2,9 @@ import React from "react";
 import Layout from "../../src/components/Layout";
 import Section from "../../src/components/Section";
 import CategoryNav from "../../src/components/CategoryNav";
+import Link from "next/link";
 import data from "../../src/data";
+import s from "./metrics.module.css";
 
 const MetricsCategoryRoute = ({ sectionData }) => {
   if (!sectionData) {
@@ -13,17 +15,42 @@ const MetricsCategoryRoute = ({ sectionData }) => {
     );
   }
 
+  const currentIndex = data.metrics.sections.findIndex(section => section.id === sectionData.id);
+  const previousSection = currentIndex > 0 ? data.metrics.sections[currentIndex - 1] : null;
+  const nextSection = currentIndex < data.metrics.sections.length - 1 ? data.metrics.sections[currentIndex + 1] : null;
+
   return (
     <Layout>
-      <CategoryNav 
-        categories={data.metrics.sections.map(section => ({
-          id: section.id,
-          title: section.title,
-          href: `/metrics/${section.id}`
-        }))}
-        activeId={sectionData.id}
-      />
-      <Section section={sectionData} completedLabel="Completed" />
+      <div className={s.container}>
+        <CategoryNav 
+          categories={data.metrics.sections.map(section => ({
+            id: section.id,
+            title: section.title,
+            href: `/metrics/${section.id}`
+          }))}
+          activeId={sectionData.id}
+        />
+        <Section section={sectionData} completedLabel="Completed" />
+        
+        <div className={s.navigation}>
+          {previousSection && (
+            <Link href={`/metrics/${previousSection.id}`} className={s.navLink}>
+              <div className={s.navItem}>
+                <span className={s.navDirection}>← Previous</span>
+                <span className={s.navTitle}>{previousSection.title}</span>
+              </div>
+            </Link>
+          )}
+          {nextSection && (
+            <Link href={`/metrics/${nextSection.id}`} className={s.navLink}>
+              <div className={s.navItem}>
+                <span className={s.navDirection}>Next →</span>
+                <span className={s.navTitle}>{nextSection.title}</span>
+              </div>
+            </Link>
+          )}
+        </div>
+      </div>
     </Layout>
   );
 };
