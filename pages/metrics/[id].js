@@ -31,7 +31,7 @@ const MetricsCategoryRoute = ({ sectionData }) => {
           activeId={sectionData.id}
         />
         <Section section={sectionData} completedLabel="Completed" />
-        
+
         <div className={s.navigation}>
           {previousSection && (
             <Link href={`/metrics/${previousSection.id}`} className={s.navLink}>

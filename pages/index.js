@@ -1,14 +1,13 @@
-
 import React from "react";
-import Hero from "../src/components/Hero";
+import Link from "next/link";
 import Layout from "../src/components/Layout";
+import Hero from "../src/components/Hero";
 import Button from "../src/components/Button";
 import SectionTitle from "../src/components/SectionTitle";
-import Link from "next/link";
 import { useCheckedIds } from "../src/utilities/checklistsContext";
+import { IconArrowRight } from "../src/icons/arrowRight";
 import data from "../src/data";
-import s from "./metrics.module.css";
-import IconArrowRight from "../src/icons/arrowRight";
+import s from "../pages/metrics/metrics.module.css";
 
 const IndexRoute = () => {
   const { checkedIds } = useCheckedIds();
