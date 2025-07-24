@@ -43,8 +43,8 @@ const Header = () => {
           <ul className={s.menu}>
             <li className={s.item}>
               <Link 
-                href="/metrics" 
-                className={router.pathname === "/metrics" || router.pathname.startsWith("/metrics/") ? s.active : ""}
+                href="/" 
+                className={router.pathname === "/" || (router.pathname !== "/about" && router.pathname !== "/share") ? s.active : ""}
                 onClick={closeMenu}
               >
                 Measure
