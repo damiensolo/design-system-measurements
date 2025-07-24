@@ -8,5 +8,3 @@ const IconArrowRight = () => (
 );
 
 export default IconArrowRight;
-
-export default IconArrowRight;
