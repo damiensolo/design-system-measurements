@@ -1,6 +1,7 @@
-
 .container {
-  margin-bottom: var(--space-l);
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--space-2);
 }
 
 .list {

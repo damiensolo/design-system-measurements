@@ -7,12 +7,14 @@ const ExportButton = ({ text, feedbackText }) => {
 
   const handleClick = () => {
     // Copy current URL to clipboard
-    navigator.clipboard.writeText(window.location.href);
-    
-    setShowFeedback(true);
-    setTimeout(() => {
-      setShowFeedback(false);
-    }, 2000);
+    if (navigator.clipboard && window.location) {
+      navigator.clipboard.writeText(window.location.href);
+      
+      setShowFeedback(true);
+      setTimeout(() => {
+        setShowFeedback(false);
+      }, 2000);
+    }
   };
 
   return (
