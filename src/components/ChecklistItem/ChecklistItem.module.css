@@ -28,10 +28,10 @@
   position: absolute;
   left: 0;
   top: 2px;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border: 2px solid var(--color-border);
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: var(--color-background);
   transition: all 0.2s ease;
 }
@@ -44,8 +44,8 @@
 .input:checked + .label:after {
   content: '';
   position: absolute;
-  left: 6px;
-  top: 4px;
+  left: 7px;
+  top: 5px;
   width: 6px;
   height: 10px;
   border: solid white;
@@ -109,8 +109,8 @@
 
   .input:checked + .label:after {
     left: auto;
-    right: 6px;
-    top: 4px;
+    right: 7px;
+    top: 5px;
     width: 6px;
     height: 10px;
   }
