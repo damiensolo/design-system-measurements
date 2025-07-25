@@ -8,8 +8,8 @@ const Footer = ({ t }) => {
   return (
     <div className={s.root}>
       <div className={s.content}>
-        <h2 className={s.title}>Design System Checklist</h2>
-        <p className={s.text}>An open-source checklist to help you plan, build and grow your design system.</p>
+        <h2 className={s.title}></h2>
+        <p className={s.text}></p>
       </div>
     </div>
   );
