@@ -1,5 +1,5 @@
 .container {
   display: grid;
-  grid-gap: var(--spacing-32);
+  grid-gap: var(--spacing-48);
   margin-top: var(--spacing-48);
 }
