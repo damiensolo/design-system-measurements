@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  padding-left: var(--spacing-48);
+  padding-left: 40px;
   position: relative;
   line-height: var(--line-height-body);
   flex: 1;
@@ -27,9 +27,9 @@
   content: '';
   position: absolute;
   left: 0;
-  top: 2px;
-  width: 20px;
-  height: 20px;
+  top: 0;
+  width: 24px;
+  height: 24px;
   border: 2px solid var(--color-border);
   border-radius: 4px;
   background-color: var(--color-background);
@@ -44,8 +44,8 @@
 .input:checked + .label:after {
   content: '';
   position: absolute;
-  left: 7px;
-  top: 5px;
+  left: 8px;
+  top: 3px;
   width: 6px;
   height: 10px;
   border: solid white;
@@ -109,8 +109,8 @@
 
   .input:checked + .label:after {
     left: auto;
-    right: 7px;
-    top: 5px;
+    right: 8px;
+    top: 3px;
     width: 6px;
     height: 10px;
   }
