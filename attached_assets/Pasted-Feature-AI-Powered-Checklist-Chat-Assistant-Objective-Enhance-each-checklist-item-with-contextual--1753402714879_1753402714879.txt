@@ -1,0 +1,61 @@
+Feature: AI-Powered Checklist Chat Assistant
+Objective:
+Enhance each checklist item with contextual AI-powered chat functionality that supports users in understanding and completing tasks more effectively.
+
+🧩 Feature Overview
+This feature introduces an interactive “Ask AI” capability to each checklist item in the Design System Checklist. The user can invoke a contextual chat assistant trained on the topic of that specific task. The AI assistant provides on-demand help, examples, and clarification directly within the flow of the checklist UI.
+
+🖼 UX States (Based on Screenshots)
+1. Idle State (Hover to Reveal AI Prompt Button)
+📷 Screenshot 1
+
+When the user hovers over a checklist item (e.g., "Return on Investment"), a contextual button labeled “Ask AI” appears beside the item title.
+
+On mouse blur, the button is hidden again to preserve minimal UI clutter.
+
+2. Engaged State (User Clicks Ask AI)
+📷 Screenshot 2
+
+Clicking “Ask AI” expands an AI chat input field just beneath the checklist item title.
+
+The input field contains a default prompt:
+
+"What would you like to learn about [Checklist Title]?"
+(e.g., "What would you like to learn about Return on Investment (ROI)?")
+
+💬 Chat Functionality
+Once the chat input is revealed:
+
+The user can initiate a conversation with an LLM that is pretrained on the subject matter of the checklist item.
+
+A full conversational chat experience begins, in a mini chat UI, anchored directly under the relevant task.
+
+The AI offers examples, clarifications, and guidance specific to the checklist item topic.
+
+The chat can be used iteratively until the user is satisfied.
+
+❌ Exit Behavior
+The user must be able to close or minimize the chat thread.
+
+Closing the thread resets the checklist item back to its original collapsed state with the checkbox and hover behavior intact.
+
+🔁 Repeatability
+Every checklist item includes this AI-powered chat capability.
+
+The interaction pattern is consistent across all items to reduce cognitive load.
+
+🧪 UX Goals
+Keep the core checklist UI clean and focused by showing chat UI only on demand.
+
+Keep interactions contextual, scoped, and dismissable.
+
+Ensure the LLM is optimized to deliver useful, scoped answers for each checklist domain.
+
+🛠 Requirements Summary
+Feature	Description
+Ask AI Button	Visible on hover, hidden on blur
+Contextual Chat	Opens below checklist title, prefilled prompt
+LLM Response	Tailored to the item topic
+Full Chat UI	Support standard chat interaction model
+Dismissible	User can close chat to resume checklist flow
+Consistency	Available and behaves the same across all tasks
