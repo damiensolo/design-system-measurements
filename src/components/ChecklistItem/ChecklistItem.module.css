@@ -1,6 +1,8 @@
 .container {
-  display: flex;
-  margin-left: calc((var(--spacing-48) + var(--spacing-4)) * -1);
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  grid-gap: var(--spacing-16);
+  align-items: start;
 }
 
 .input {
@@ -62,10 +64,36 @@
 }
 
 .description {
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-body);
-  color: var(--color-text-light);
-  margin-top: var(--spacing-8);
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.chatButton {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: var(--spacing-8);
+  cursor: pointer;
+  font-size: 16px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
+
+.chatButton:hover {
+  opacity: 1;
+  border-color: var(--color-primary);
+  background-color: var(--color-background-secondary);
+}
+
+.chatButton:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb), 0.2);
 }
 
 @media (max-width: 640px) {
