@@ -68,6 +68,76 @@
   color: var(--color-text-secondary);
 }
 
+.container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-24);
+  position: relative;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding-left: var(--spacing-48);
+  position: relative;
+  line-height: var(--line-height-body);
+  flex: 1;
+}
+
+.label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-border);
+  border-radius: 3px;
+  background-color: var(--color-background);
+  transition: all 0.2s ease;
+}
+
+.input:checked + .label:before {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.input:checked + .label:after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 7px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.title {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-8);
+  font-weight: 500;
+}
+
+.description {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-12);
+}
+
 .chatButton {
   background: none;
   border: none;
