@@ -70,30 +70,26 @@
 
 .chatButton {
   background: none;
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  padding: var(--spacing-8);
+  border: none;
   cursor: pointer;
-  font-size: 16px;
-  width: 40px;
-  height: 40px;
-  display: flex;
+  font-size: var(--font-size-body);
+  color: var(--color-text-secondary);
+  padding: 0;
+  margin: 0;
+  transition: color 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-  opacity: 0.7;
+  gap: var(--spacing-4);
 }
 
 .chatButton:hover {
-  opacity: 1;
-  border-color: var(--color-primary);
-  background-color: var(--color-background-secondary);
+  color: var(--color-primary);
 }
 
 .chatButton:focus {
   outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb), 0.2);
+  color: var(--color-primary);
 }
 
 @media (max-width: 640px) {

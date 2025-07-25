@@ -37,7 +37,7 @@ const ChecklistItem = ({ title, description, id }) => {
           aria-label={`Ask questions about ${title}`}
           title="Ask AI about this item"
         >
-          💬
+          💬 Ask AI
         </button>
       </li>
       {showChat && (
