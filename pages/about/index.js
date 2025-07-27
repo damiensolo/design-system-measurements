@@ -10,10 +10,10 @@ const AboutText = () => {
       I've spent years building design systems and tracking their impact. They
       all share common measurement challenges and opportunities. This guide
       collects proven metrics to help you demonstrate value and drive adoption
-      at any company. Your measurement strategy might look different from our
-      categories. That's fine. This isn't a checklist for every team. It's a
-      guide to help you cover the key data points that prove strong user
-      experiences and business value.
+      at any company. Your measurement strategy might look different from these
+      categories. That's ok. This isn't a checklist for every team. It's a guide
+      to help you cover the key data points that prove strong user experiences
+      and business value.
       <br />
       <br />
       Measuring a design system's impact is essential for demonstrating value

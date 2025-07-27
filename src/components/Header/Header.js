@@ -27,7 +27,7 @@ const Header = () => {
       <div className={s.logo}>
         <Link href="/metrics">
           <img src="/sd-logo.svg" alt="SD Logo" width="32" height="32" className={s.logoImage} />
-          <span className={s.logoText}>Design System Checklist</span>
+          <span className={s.logoText}>Design System Measurement </span>
         </Link>
       </div>
 
